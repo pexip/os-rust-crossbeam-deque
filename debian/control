@@ -1,0 +1,54 @@
+Source: rust-crossbeam-deque
+Section: rust
+Priority: optional
+Build-Depends: debhelper (>= 12),
+ dh-cargo (>= 25),
+ cargo:native <!nocheck>,
+ rustc:native <!nocheck>,
+ libstd-rust-dev <!nocheck>,
+ librust-cfg-if-1+default-dev <!nocheck>,
+ librust-crossbeam-epoch-0.9+std-dev <!nocheck>,
+ librust-crossbeam-utils-0.8+std-dev <!nocheck>
+Maintainer: Debian Rust Maintainers <pkg-rust-maintainers@alioth-lists.debian.net>
+Uploaders:
+ Wolfgang Silbermayr <wolfgang@silbermayr.at>,
+ kpcyrd <git@rxv.cc>
+Standards-Version: 4.5.1
+Vcs-Git: https://salsa.debian.org/rust-team/debcargo-conf.git [src/crossbeam-deque]
+Vcs-Browser: https://salsa.debian.org/rust-team/debcargo-conf/tree/master/src/crossbeam-deque
+Homepage: https://github.com/crossbeam-rs/crossbeam/tree/master/crossbeam-deque
+Rules-Requires-Root: no
+
+Package: librust-crossbeam-deque-dev
+Architecture: any
+Multi-Arch: same
+Depends:
+ ${misc:Depends},
+ librust-cfg-if-1+default-dev,
+ librust-crossbeam-epoch-0.9+std-dev,
+ librust-crossbeam-epoch-0.9-dev,
+ librust-crossbeam-utils-0.8+std-dev,
+ librust-crossbeam-utils-0.8-dev
+Provides:
+ librust-crossbeam-deque+crossbeam-epoch-dev (= ${binary:Version}),
+ librust-crossbeam-deque+crossbeam-utils-dev (= ${binary:Version}),
+ librust-crossbeam-deque+default-dev (= ${binary:Version}),
+ librust-crossbeam-deque+std-dev (= ${binary:Version}),
+ librust-crossbeam-deque-0-dev (= ${binary:Version}),
+ librust-crossbeam-deque-0+crossbeam-epoch-dev (= ${binary:Version}),
+ librust-crossbeam-deque-0+crossbeam-utils-dev (= ${binary:Version}),
+ librust-crossbeam-deque-0+default-dev (= ${binary:Version}),
+ librust-crossbeam-deque-0+std-dev (= ${binary:Version}),
+ librust-crossbeam-deque-0.8-dev (= ${binary:Version}),
+ librust-crossbeam-deque-0.8+crossbeam-epoch-dev (= ${binary:Version}),
+ librust-crossbeam-deque-0.8+crossbeam-utils-dev (= ${binary:Version}),
+ librust-crossbeam-deque-0.8+default-dev (= ${binary:Version}),
+ librust-crossbeam-deque-0.8+std-dev (= ${binary:Version}),
+ librust-crossbeam-deque-0.8.1-dev (= ${binary:Version}),
+ librust-crossbeam-deque-0.8.1+crossbeam-epoch-dev (= ${binary:Version}),
+ librust-crossbeam-deque-0.8.1+crossbeam-utils-dev (= ${binary:Version}),
+ librust-crossbeam-deque-0.8.1+default-dev (= ${binary:Version}),
+ librust-crossbeam-deque-0.8.1+std-dev (= ${binary:Version})
+Description: Concurrent work-stealing deque - Rust source code
+ This package contains the source for the Rust crossbeam-deque crate, packaged
+ by debcargo for use with cargo and dh-cargo.

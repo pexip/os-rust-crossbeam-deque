@@ -1,0 +1,29 @@
+Test-Command: /usr/share/cargo/bin/cargo-auto-test crossbeam-deque 0.8.1 --all-targets --all-features
+Features: test-name=rust-crossbeam-deque:@
+Depends: dh-cargo (>= 18), librust-rand-0.8+default-dev, @
+Restrictions: allow-stderr, skip-not-installable, flaky
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test crossbeam-deque 0.8.1 --all-targets --no-default-features --features crossbeam-epoch
+Features: test-name=librust-crossbeam-deque-dev:crossbeam-epoch
+Depends: dh-cargo (>= 18), librust-rand-0.8+default-dev, @
+Restrictions: allow-stderr, skip-not-installable, flaky
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test crossbeam-deque 0.8.1 --all-targets --no-default-features --features crossbeam-utils
+Features: test-name=librust-crossbeam-deque-dev:crossbeam-utils
+Depends: dh-cargo (>= 18), librust-rand-0.8+default-dev, @
+Restrictions: allow-stderr, skip-not-installable, flaky
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test crossbeam-deque 0.8.1 --all-targets 
+Features: test-name=librust-crossbeam-deque-dev:default
+Depends: dh-cargo (>= 18), librust-rand-0.8+default-dev, @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test crossbeam-deque 0.8.1 --all-targets --no-default-features --features std
+Features: test-name=librust-crossbeam-deque-dev:std
+Depends: dh-cargo (>= 18), librust-rand-0.8+default-dev, @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test crossbeam-deque 0.8.1 --all-targets --no-default-features
+Features: test-name=librust-crossbeam-deque-dev:
+Depends: dh-cargo (>= 18), librust-rand-0.8+default-dev, @
+Restrictions: allow-stderr, skip-not-installable, flaky
